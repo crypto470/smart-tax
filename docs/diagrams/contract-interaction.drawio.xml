@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.3">
+  <diagram name="Contract Interaction" id="interact-001">
+    <mxGraphModel dx="480" dy="347" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="100" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;" value="Token Flow / Contract Interaction" vertex="1">
+          <mxGeometry height="40" width="550" x="310" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontStyle=1;" value="Admin Wallet" vertex="1">
+          <mxGeometry height="80" width="160" x="100" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=14;fontStyle=1;" value="User Wallet" vertex="1">
+          <mxGeometry height="80" width="160" x="100" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;fontStyle=1;" value="TaxaToken&#xa;(Non-Transferable ERC-20)&#xa;Mint + Burn only" vertex="1">
+          <mxGeometry height="100" width="220" x="470" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;fontStyle=1;" value="SmartTaxAllocation&#xa;(Governance + QV)&#xa;Burn-on-vote" vertex="1">
+          <mxGeometry height="100" width="220" x="470" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;fontSize=11;fontStyle=0;strokeColor=#6C8EBF;strokeWidth=2;entryX=0;entryY=0.5;" target="3" value="1. mint(citizen, amount)&#xa;   After tax verification">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="170" />
+            </Array>
+            <mxPoint x="260" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" source="2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;fontSize=11;strokeColor=#82B366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="4" value="2. allocateVotes(projectId, amount)&#xa;   (tokens burned immediately)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" source="4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;fontSize=11;strokeColor=#D6B656;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="3" value="3. burn(user, amount)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="text;html=1;fontSize=11;fontStyle=2;align=center;verticalAlign=middle;fillColor=#E1D5E7;strokeColor=#9673A6;rounded=1;" value="4. finalize() — permissionless&#xa;Emits ProjectResult events:&#xa;QV share per project (off-chain budget)" vertex="1">
+          <mxGeometry height="55" width="200" x="480" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;strokeColor=#9673A6;" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;fontSize=11;strokeColor=#B85450;strokeWidth=1;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="If cancelled:&#xa;mintFromAllocation(user, amount)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="430" />
+              <mxPoint x="740" y="170" />
+              <mxPoint x="690" y="170" />
+            </Array>
+            <mxPoint x="690" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.3">
+  <diagram name="Voter Journey" id="voter-001">
+    <mxGraphModel dx="960" dy="694" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="100" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;" value="Voter / Citizen Journey" vertex="1">
+          <mxGeometry height="40" width="370" x="400" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;fontStyle=1;" value="Start" vertex="1">
+          <mxGeometry height="50" width="100" x="530" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;dashed=1;" value="Pay Taxes&#xa;Off-Chain" vertex="1">
+          <mxGeometry height="60" width="150" x="505" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" value="Admin Mints TAXA&#xa;to Your Wallet" vertex="1">
+          <mxGeometry height="60" width="150" x="505" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;dashed=1;" value="Wait for Admin&#xa;to Start Round" vertex="1">
+          <mxGeometry height="60" width="150" x="505" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;fontStyle=1;" value="allocateVotes()&#xa;Split TAXA across projects&#xa;(tokens burned immediately)&#xa;QV: weight = floor(sqrt(tokens))" vertex="1">
+          <mxGeometry height="80" width="200" x="480" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;dashed=1;" value="Wait for&#xa;Finalization" vertex="1">
+          <mxGeometry height="60" width="150" x="505" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" value="View Results&#xa;(QV percentages on-chain,&#xa;budget distributed off-chain)" vertex="1">
+          <mxGeometry height="70" width="200" x="480" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;fontStyle=1;" value="End" vertex="1">
+          <mxGeometry height="50" width="100" x="530" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;dashed=1;" value="If Round Cancelled:&#xa;reclaimTokens()&#xa;(tokens re-minted)" vertex="1">
+          <mxGeometry height="60" width="170" x="820" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" source="2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=11;fontStyle=2;strokeColor=#B85450;" target="10" value="cancelled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

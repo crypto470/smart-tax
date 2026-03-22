@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.3">
+  <diagram name="System Architecture" id="arch-001">
+    <mxGraphModel dx="1712" dy="1219" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;container=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Blockchain / Sepolia Testnet" vertex="1">
+          <mxGeometry height="490" width="670" x="240" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;fontStyle=1;" value="TaxaToken&#xa;(Non-Transferable ERC-20)&#xa;Mint + Burn only" vertex="1">
+          <mxGeometry height="104.19" width="190.17" x="109.83" y="191.15" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;fontStyle=1;" value="SmartTaxAllocation&#xa;(Governance + QV)&#xa;Timelock | Burn-on-vote&#xa;weight = floor(sqrt(tokens))" vertex="1">
+          <mxGeometry height="100.68" width="197.54" x="380" y="191.15" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="2" source="4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;entryX=0.75;entryY=0;fontSize=11;fontStyle=2;strokeColor=#D6B656;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="3" value="burn()&#xa;mintFromAllocation()">
+          <mxGeometry relative="1" x="-0.0072" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="429" y="160" />
+              <mxPoint x="252" y="160" />
+            </Array>
+            <mxPoint x="362" y="227" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontStyle=1;" value="Admin" vertex="1">
+          <mxGeometry height="60" width="140" x="505" y="-90" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=14;fontStyle=1;" value="Voter / Citizen" vertex="1">
+          <mxGeometry height="60" width="140" x="-50" y="344.38" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=14;fontStyle=1;dashed=1;" value="Off-chain&#xa;Budget Distribution" vertex="1">
+          <mxGeometry height="60" width="160" x="1130" y="344.38" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" source="5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0;exitY=1;entryX=0.5;entryY=0;fontSize=11;fontStyle=2;strokeColor=#6C8EBF;" target="3" value="mint()">
+          <mxGeometry relative="1" x="-0.5404" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" source="5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=1;entryX=0.5;entryY=0;fontSize=11;fontStyle=2;strokeColor=#6C8EBF;" target="4" value="startRound()&#xa;proposeAddProject()&#xa;cancelRound()">
+          <mxGeometry relative="1" x="-0.5559" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;entryX=0.5;entryY=1;fontSize=11;fontStyle=2;strokeColor=#82B366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="4" value="allocateVotes()&#xa;reclaimTokens()">
+          <mxGeometry relative="1" x="-0.3486" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="20" y="470" />
+              <mxPoint x="719" y="470" />
+            </Array>
+            <mxPoint x="-10" y="410" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;fontSize=11;fontStyle=2;strokeColor=#D79B00;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="4" value="ProjectResult events&#xa;(QV percentages)">
+          <mxGeometry relative="1" x="-0.208" y="-4" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1130" y="380" />
+              <mxPoint x="974" y="380" />
+              <mxPoint x="974" y="382" />
+            </Array>
+            <mxPoint x="800" y="369.96999999999997" as="sourcePoint" />
+            <mxPoint x="1090" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
